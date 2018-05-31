@@ -1,11 +1,164 @@
-/* .home-main {
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
+
+.home-main {
+    grid-auto-columns: 1fr 1fr;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+}
+
+.title {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    width: 100vw;
+    background: linear-gradient(to right, #87af90, #657e8d);
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 70px;
+}
+.title > h1 {
+    display: inline-block;
+}
+.title > .logo {
+    position: absolute;
+    top: 30px;
+    right: 15vw;
+    width: 55px;
+    height: 55px;
+    margin:0;
+    padding: 5px 5px 5px 5px;
+    display: inline-block;
 }
 
 .calorie-sum {
-
+    margin-bottom: 5vh;
+}
+.log {
+    float: right;
+    text-align: center;
+    margin: 0;
 }
 
-.macro-sum {
+.log ul {
+    list-style: none;
+    float: right;
+    text-align: center;
+}
 
-} */
+.chart  > canvas{
+    width: auto;
+    height: auto;
+    float: left;
+}
+
+.macro-sum ul {
+    list-style: none;
+    width: 40%;
+    float: right;
+    padding: 0;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.macro-sum li {
+    line-height: 300%;
+}
+
+
+
+ul > li > button {
+    background: #6ba4be;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 70px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+    .cal {
+        padding-top: 40px;
+        font-size: 160%;
+        width: 30%;
+        float: left;
+    }
+    .log {
+        width: 30%;
+        margin-right: 10%;
+        width: 400px;
+    }
+     li > .foodinput {
+         width: 300px;
+         margin-left: 60px;
+         margin-top: 5px;
+     }
+     ul > li > button {
+         float: right;
+         margin-right: 120px;
+     }
+    .macro-sum ul {
+        font-size: 150%;
+    }
+    .addfood {
+        width: 400px;
+        padding: 0;
+    }
+
+    .foodlist {
+        line-height: 230%;
+        width: 300px;
+        height: 250px;
+        background: #E7E5DF;
+        padding: 20px 20px 20px 20px;
+        border: 2px double #87af90;
+        overflow: scroll;
+    }
+
+
+
+
+@media screen and (max-width: 450px) {
+    .home-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        align-items: center;
+    }
+    .cal {
+        justify-self: center;
+        margin-right: 35vw;
+        margin-left: 35vw;
+    }
+    li > .foodinput {
+        width: 60vw;
+        display: block;
+        padding: 3px 3px 3px 3px;
+        margin: 7px 7px 7px 7px;
+        border: none;
+    }
+    .macro-sum {
+        height: 500px;
+    }
+     .chart {
+        width: 100vw;
+        height: auto;
+        margin-top: 100px;
+    }
+    .foodlist {
+       overflow: scroll;
+    }
+    .addfood {
+        margin: 0;
+        width: 70vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    ul > li > button {
+        margin: 5px 5px 5px 5px;
+        float: left;
+        margin-left: 80px
+    }
+}

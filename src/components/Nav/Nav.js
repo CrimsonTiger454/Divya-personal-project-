@@ -30,7 +30,7 @@ render () {
     const {classes} = this.props;
     const sideList = (
         <nav className={classes.navList}>
-        <Link to='/'>Home</Link>
+        <Link to='/home'>Home</Link>
         <br />
         <Link to='/foods'>My Foods</Link>
         <br />

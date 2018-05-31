@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+.login-main {
+    margin-top: 20vh;
+    font-family: 'Varela Round', sans-serif;
+    background: linear-gradient(to right, #87af90, #657e8d);
+    height: 30vh;
+}
+
+.logo {
+    margin-top: 30px;
+    width: 100px;
+    height: 100px;
+}
+
+a > button {
+    font-family: 'Varela Round', sans-serif;
+    background: whitesmoke;
+    border-style: double;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
