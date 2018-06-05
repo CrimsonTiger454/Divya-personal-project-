@@ -24,8 +24,12 @@ export class Home extends Component {
     }
 
     render () {
-
         const {displayname} = this.props.user;
+        if (!displayname) {
+            return (
+                <h2>Looks like that didn't work,<br/> please go back and <a href='http://localhost:3333/login'>try again</a></h2>
+            );
+        }
         return (
             <div className='home-main'>
                 <div className='title'>

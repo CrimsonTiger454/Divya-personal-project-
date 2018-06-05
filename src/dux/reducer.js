@@ -12,7 +12,8 @@ const FULFILLED = '_FULFILLED';
 export function getUser (action) {
     let userData = axios.get('/auth/me').then(res => {
         console.log(res.data);
-    })
+        return res.data;
+    });
     return {
         type: GET_USER,
         payload: userData
