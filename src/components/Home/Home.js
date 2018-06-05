@@ -3,17 +3,27 @@ import {connect} from 'react-redux';
 import {getUser} from '../../dux/reducer';
 import PieChart from './PieChart';
 import logo from '../../Resources/mandala2.svg';
+import Rejected from '../LoginFailure/LoginFailure';
 import './Home.css';
 
 
 export class Home extends Component {
+
+    // checkUser () {
+    //     if (!this.props.user) {
+    //         return (
+    //             <div>
+    //                 <Rejected />
+    //             </div>
+    //         )
+    //     } 
+    // }
 
     componentDidMount() {
         this.props.getUser();
     }
 
     render () {
-        
 
         const {displayname} = this.props.user;
         return (

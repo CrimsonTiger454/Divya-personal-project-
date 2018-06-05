@@ -1,10 +1,9 @@
 import React from 'react';
 import './LoginFailure.css';
 
-export default class rejected extends React.Component {
+export default class Rejected extends React.Component {
 
     render () {
-        console.log(this.props);
         return(
             <div className='rejected'>
                 <h1>Hmm . . . Looks like that login is invalid</h1>

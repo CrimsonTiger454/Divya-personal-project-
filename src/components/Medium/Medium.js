@@ -12,7 +12,7 @@ class Medium extends Component {
     }
 
     render () {
-        console.log(this.props);
+        this.props.getUser()
         let {displayname, userIMG, user_id} = this.props.user;
         return (
             <div>

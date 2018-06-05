@@ -12,7 +12,6 @@ const FULFILLED = '_FULFILLED';
 export function getUser (action) {
     let userData = axios.get('/auth/me').then(res => {
         console.log(res.data);
-        return res.data;
     })
     return {
         type: GET_USER,
@@ -20,12 +19,12 @@ export function getUser (action) {
     }
 }
 
+
 export function setCalories (action) {
     
 }
 
 export default function reducer (state = init_state, action) {
-    console.log(action)
     switch(action.type) {
         case GET_USER + FULFILLED:
             return Object.assign({}, state, {user: action.payload})
