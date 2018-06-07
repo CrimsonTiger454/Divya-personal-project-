@@ -2,7 +2,9 @@ const express = require('express'),
 session = require('express-session'),
 massive = require('massive'),
 passport = require('passport'),
+bodyParser = require('body-parser'),
 Auth0Strategy = require('passport-auth0');
+const goalController = require('./controllers/goalsController');
 require('dotenv').config();
 
 const checkSession = require('./middleware/checkForSession');
@@ -27,6 +29,7 @@ massive(CONNECT_STR).then( (db) => {
     // } )
 })
 
+app.use(bodyParser.json());
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -78,8 +81,11 @@ app.get('/auth/callback', passport.authenticate('auth0', {
     failureRedirect: 'http://localhost:3000/#/loginFailure'
 }));
 
+app.put('/setCalorieGoal', goalController.setCalorieGoal);
+
 app.get('/auth/me', (req, res) => {
     if (req.user) {
+        console.log(req.user);
         res.status(200).send(req.user)
     }  else {
         res.sendStatus(401);
