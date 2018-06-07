@@ -21,6 +21,8 @@ CONNECT_STR
 
 const app = express();
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 massive(CONNECT_STR).then( (db) => {
     console.log('db connected');
     app.set('db', db);
@@ -77,8 +79,8 @@ passport.deserializeUser(function(id, done) {
 
 app.get('/login', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect:'http://localhost:3000/#/medium',
-    failureRedirect: 'http://localhost:3000/#/loginFailure'
+    successRedirect: process.env.SUCCESS_REDIRECT,
+    failureRedirect: process.env.FAILURE_REDIRECT
 }));
 
 app.put('/setCalorieGoal', goalController.setCalorieGoal);

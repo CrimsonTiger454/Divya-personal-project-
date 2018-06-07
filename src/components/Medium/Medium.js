@@ -23,7 +23,7 @@ class Medium extends Component {
                         <Link to='/home'><button className='continue'>Continue to Home Page</button></Link>
                     </div>
                     :
-                    <h2>Looks like that didn't work,<br/> please go back and <a href='http://localhost:3333/login'>try again</a></h2>
+                    <h2>Looks like that didn't work,<br/> please go back and <a href={process.env.REACT_APP_LOGIN}>try again</a></h2>
                 }
             </div>
         )

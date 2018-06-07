@@ -8,7 +8,7 @@ export default function Login () {
         <div className='login-main'>
             <img className='logo'src={logo} alt ='divya'/>
             <h1>Hello, please login.</h1>
-            <a href='http://localhost:3333/login'><button>Login</button></a>
+            <a href={process.env.REACT_APP_LOGIN}><button>Login</button></a>
         </div>
     )
 }

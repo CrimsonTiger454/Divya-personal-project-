@@ -7,7 +7,7 @@ export default class Rejected extends React.Component {
         return(
             <div className='rejected'>
                 <h1>Hmm . . . Looks like that login is invalid</h1>
-                <a href='http://localhost:3333/login'>Please try again</a>
+                <a href={process.env.REACT_APP_LOGIN}>Please try again</a>
             </div>
             )
     }

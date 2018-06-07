@@ -27,7 +27,7 @@ export class Home extends Component {
         const {displayname} = this.props.user;
         if (!displayname) {
             return (
-                <h2>Looks like that didn't work,<br/> please go back and <a href='http://localhost:3333/login'>try again</a></h2>
+                <h2>Looks like that didn't work,<br/> please go back and <a href={process.env.REACT_APP_LOGIN}>try again</a></h2>
             );
         }
         return (
