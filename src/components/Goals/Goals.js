@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {getUser} from '../../dux/reducer';
+import {getUser, getCalorieGoal} from '../../dux/reducer';
 import './Goals.css';
 
 export class Goals extends Component {
@@ -17,7 +17,11 @@ export class Goals extends Component {
             this.handleChange = this.handleChange.bind(this);
         }
 
-        handleChange (event) {
+        componentDidMount() {
+            this.props.getCalorieGoal();
+        }
+
+        handleInputChange (event) {
             this.setState({calorieInput: event.target.value})
         }
 
@@ -32,11 +36,13 @@ export class Goals extends Component {
                 console.log(res.data)
             })
             this.setState({calorieInput: ''})
+            
         }
 
     render () {
-        //console.log(this.props.user);
+        const {caloriegoal} = this.props.userCalorieGoal;
         const {displayname} = this.props.user;
+        
         if (!displayname) {
             return (
                 <h2>Looks like that didn't work,<br/> please go back and <a href={process.env.REACT_APP_LOGIN}>try again</a></h2>
@@ -47,7 +53,7 @@ export class Goals extends Component {
                 <h1 className='title'>Goals</h1>
 
                 <div className='calories-goal'>
-                    <h1>Daily Calorie goal:</h1>
+                    <h1>Daily Calorie goal: <br/> {caloriegoal} </h1>
                         {
                             this.state.editting ?
                             <div>
@@ -77,7 +83,8 @@ export class Goals extends Component {
 }
 function mapStateToProps (reduxState) {
     return {
-        user: reduxState.user
+        user: reduxState.user,
+        userCalorieGoal: reduxState.calorieGoal
     }
 }
-export default connect(mapStateToProps, {getUser})(Goals);
+export default connect(mapStateToProps, {getUser, getCalorieGoal})(Goals);

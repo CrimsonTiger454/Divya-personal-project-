@@ -1,17 +1,29 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../dux/reducer';
+import './Profile.css';
 
 export class Profile extends Component {
 
+    componentDidMount() {
+        this.props.getUser();
+    }
+
     render () {
-        // console.log(this.props.user)
-        // const {displayname} = this.props.user;
-        // var first = displayname.split(' ');
-        // console.log(first);
+        const {displayname, userimg} = this.props.user;
+        if (!displayname) {
+            return (
+                <h2>Looks like that didn't work,<br/> please go back and <a href={process.env.REACT_APP_LOGIN}>try again</a></h2>
+            );
+        }
+        var splitname = displayname.split(' ');
         return (
             <div className='profile-main'>
-                <h1> Profile</h1>
+                <h1 className='username' >{splitname[0]}'s Profile </h1>
+                <img src={userimg} alt='profile-photo' className='userimg' />
+                <section className='userquote'>
+                
+                </section>
             </div>
         )
     }

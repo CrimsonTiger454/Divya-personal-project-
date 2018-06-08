@@ -8,16 +8,16 @@ import './Home.css';
 
 
 export class Home extends Component {
-
-    // checkUser () {
-    //     if (!this.props.user) {
-    //         return (
-    //             <div>
-    //                 <Rejected />
-    //             </div>
-    //         )
-    //     } 
-    // }
+    constructor() {
+        super();
+        this.state = {
+            label: '',
+            calories: '',
+            fats: '',
+            carbs: '',
+            protien: ''
+        }
+    }
 
     componentDidMount() {
         this.props.getUser();

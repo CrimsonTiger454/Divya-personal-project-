@@ -84,10 +84,10 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 }));
 
 app.put('/setCalorieGoal', goalController.setCalorieGoal);
+app.get('/getCalorieGoal', goalController.getCalorieGoal);
 
 app.get('/auth/me', (req, res) => {
     if (req.user) {
-        console.log(req.user);
         res.status(200).send(req.user)
     }  else {
         res.sendStatus(401);

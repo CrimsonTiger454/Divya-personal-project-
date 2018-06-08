@@ -1,0 +1,1 @@
+select * from users left join goals on users.id = goals.userid where googleid = $1;

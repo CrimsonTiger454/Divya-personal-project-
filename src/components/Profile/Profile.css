@@ -1,0 +1,16 @@
+.profile-main {
+    height: 100vh;
+    margin: 0;
+}
+
+.userimg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.username {
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
