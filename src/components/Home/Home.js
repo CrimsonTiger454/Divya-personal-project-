@@ -79,7 +79,7 @@ export class Home extends Component {
         this.setState({ label: event.target.value})
     }
 
-    handleCaloriesInput (event) {
+        handleCaloriesInput (event) {
         this.setState({ calories: event.target.value})
     }
 
