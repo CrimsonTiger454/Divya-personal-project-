@@ -38,6 +38,7 @@ export class Home extends Component {
         this.props.getUser();
         let goalInfo = this.props.getGoalInfo();
         goalInfo.then( (res) => {
+            console.log(res);
             this.setState({staticCalories: res.value.caloriegoal})
             this.getLoggedFood();
         })
@@ -46,6 +47,7 @@ export class Home extends Component {
 
     getLoggedFood() {
         axios.get('/getLoggedFood?foodtime=today').then( res => {
+            console.log(res);
             this.setState({foodLog: res.data});
             this.calculateTotals();
         })
@@ -70,7 +72,8 @@ export class Home extends Component {
     }
 
     removeFoodItem (id) {
-        axios.delete(`/removeFood/${id}`).then(() => {
+        axios.delete(`/removeFood/${id}`).then((res) => {
+            console.log(res);
             this.getLoggedFood();
         })
     }
@@ -102,7 +105,9 @@ export class Home extends Component {
             this.setState({label: '', fats: '', carbs: '', protein: '', calories: ''})
         } else {
             axios.put('/addNewFood', {label, fats, carbs, protein, calories}).then(res => {
+                console.log(res);
                 axios.get('/getLoggedFood?foodtime=today').then( res => {
+                    console.log(res);
                     this.setState({foodLog: res.data});
                     this.calculateTotals();
                 })
