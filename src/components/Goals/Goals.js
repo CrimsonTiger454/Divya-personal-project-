@@ -32,7 +32,6 @@ export class Goals extends Component {
         componentDidMount() {
             let calProps = this.props.getGoalInfo();
             calProps.then((res) => {
-                console.log(res.value)
                 this.setState({displayCalories: res.value.caloriegoal,
                                 displayCarbs: res.value.carbgoal,
                                 displayFat: res.value.fatgoal,
