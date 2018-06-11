@@ -1,0 +1,1 @@
+delete from foodlog where id = $1;

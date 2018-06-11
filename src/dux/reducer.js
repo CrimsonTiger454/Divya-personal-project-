@@ -6,7 +6,7 @@ const init_state = {
 }
 
 const GET_USER = 'GET_USER';
-const GET_CAL_GOAL = 'GET_CAL_GOAL';
+const GET_GOAL_INFO = 'GET_GOAL_INFO';
 const FULFILLED = '_FULFILLED';
 
 export function getUser (action) {
@@ -20,15 +20,16 @@ export function getUser (action) {
     }
 }
 
-export function getCalorieGoal (action) {
-    let calGoal = axios.get('/getCalorieGoal').then( res => {
+export function getGoalInfo (action) {
+    let calGoal = axios.get('/getGoalInfo').then( res => {
         return res.data[0];
     });
     return {
-        type: GET_CAL_GOAL,
+        type: GET_GOAL_INFO,
         payload: calGoal
     }
 }
+
 
 
 
@@ -38,8 +39,8 @@ export default function reducer (state = init_state, action) {
         case GET_USER + FULFILLED:
             return Object.assign({}, state, {user: action.payload})
 
-        case GET_CAL_GOAL + FULFILLED:
-            return Object.assign({}, state, {calorieGoal: action.payload})
+        case GET_GOAL_INFO + FULFILLED:
+            return Object.assign({}, state, {goals: action.payload})
 
         default : return state;
     }

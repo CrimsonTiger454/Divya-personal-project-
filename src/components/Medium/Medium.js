@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../dux/reducer';
 import {Link} from 'react-router-dom';
-import rejected from '../LoginFailure/LoginFailure';
 import './Medium.css';
 
 class Medium extends Component {

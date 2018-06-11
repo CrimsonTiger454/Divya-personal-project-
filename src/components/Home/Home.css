@@ -8,6 +8,15 @@
     justify-content: center;
 }
 
+.cncl-btn {
+    width: 33px;
+    height: auto;
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding-top: 5px;
+}
+
 .title {
     grid-column-start: 1;
     grid-column-end: 1;
@@ -115,6 +124,10 @@ ul > li > button {
         padding: 20px 20px 20px 20px;
         border: 2px double #87af90;
         overflow: scroll;
+    }
+
+    .food-item {
+        width: 100%;
     }
 
 

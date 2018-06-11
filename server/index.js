@@ -5,6 +5,7 @@ passport = require('passport'),
 bodyParser = require('body-parser'),
 Auth0Strategy = require('passport-auth0');
 const goalController = require('./controllers/goalsController');
+const homeConroller = require('./controllers/homeController');
 require('dotenv').config();
 
 const checkSession = require('./middleware/checkForSession');
@@ -84,7 +85,11 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 }));
 
 app.put('/setCalorieGoal', goalController.setCalorieGoal);
-app.get('/getCalorieGoal', goalController.getCalorieGoal);
+app.post('/setMacroGoals', goalController.setMacroGoals);
+app.get('/getGoalInfo', goalController.getGoalInfo);
+app.put('/addNewFood', homeConroller.addNewFood);
+app.get('/getLoggedFood', homeConroller.getLoggedFood);
+app.delete('/removeFood/:id', homeConroller.removeFood);
 
 app.get('/auth/me', (req, res) => {
     if (req.user) {

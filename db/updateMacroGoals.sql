@@ -1,0 +1,1 @@
+update goals set fatgoal = $1, carbgoal = $2, proteingoal= $3 where userid = $4;

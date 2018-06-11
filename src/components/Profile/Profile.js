@@ -20,7 +20,7 @@ export class Profile extends Component {
         return (
             <div className='profile-main'>
                 <h1 className='username' >{splitname[0]}'s Profile </h1>
-                <img src={userimg} alt='profile-photo' className='userimg' />
+                <img src={userimg} alt='' className='userimg' />
                 <section className='userquote'>
                 
                 </section>
