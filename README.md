@@ -11,7 +11,7 @@ ChartJS dynamically displays daily macro info.
 Fork/clone and run npm install to to install dependencies.
 
 The server and authentication require an env file. Create a .env at the root of the project.
-### END values: 
+### ENV values: 
 ```
 SERVER_PORT=3333
 CALLBACK_URL=http://localhost:3333/auth/callback
